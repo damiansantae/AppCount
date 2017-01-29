@@ -10,7 +10,8 @@ public class MainActivity extends Activity {
     private TextView display;
     private Button boton1;
     private Button boton2;
-    private Integer counter;
+    private Presenter presenter;
+
 
 
 
@@ -26,10 +27,12 @@ public class MainActivity extends Activity {
 //            case R.id.button2:
 //              counter--;
 //            }
+            Integer counter = 0;
+
             if((view.getId())==(R.id.button1)){
-                counter++;
+                counter=presenter.onClicked(1);
             }else {
-                counter--;
+                counter= presenter.onClicked(2);
             }
 
             display.setText(counter.toString());
@@ -40,7 +43,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        counter =0;
+
 
 
         boton1 = (Button) findViewById(R.id.button1);
@@ -49,6 +52,7 @@ public class MainActivity extends Activity {
         boton2.setOnClickListener(new MyButtonListener());
 
         boton1.setOnClickListener(new MyButtonListener());
+        presenter = new Presenter();
 
 
 
