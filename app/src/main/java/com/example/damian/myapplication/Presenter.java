@@ -1,19 +1,15 @@
 package com.example.damian.myapplication;
 
 /**
- * Created by Damian on 29/01/2017.
+ * Created by Damian on 30/01/2017.
  */
 
-public class Presenter {
-    private Model model;
+public interface Presenter {
 
-    public Presenter (){
-        model = new Model();
-    }
+    //Métodos puente Presentador-Modelo;
+    public void Sumar();
+    public void Restar();
 
-    public Integer onClicked(Integer operacion){
-
-        return model.onClicked(operacion);
-
-    }
+    //Métodos puente Presentador-Vista
+    public void onDisplay (Integer numero);
 }
