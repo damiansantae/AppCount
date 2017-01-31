@@ -10,6 +10,5 @@ public interface Presenter {
     public void Sumar();
     public void Restar();
 
-    //Métodos puente Presentador-Vista
-    public void onDisplay (Integer numero);
+
 }

@@ -6,27 +6,27 @@ package com.example.damian.myapplication;
 
 public class PresenterImpl implements Presenter {
     private Model model;
+    private MainView view;
 
 
-
-    public PresenterImpl(){
+    public PresenterImpl(MainView mainView) {
         model = new Model();
-
-    }
-
-
-    public void Sumar(){
-        Integer numero=model.Suma();
-        onDisplay(numero);
-
-    }
-    public void Restar(){
-        Integer numero= model.Resta();
-        onDisplay(numero);
+        view = mainView;
 
 
     }
-    public void onDisplay (Integer numero){
-        MainView.onDisplay(numero);
+
+
+    public void Sumar() {
+        model.Suma();
+        view.onDisplay(model.getContador());
+
+    }
+
+    public void Restar() {
+        model.Resta();
+        view.onDisplay(model.getContador());
+
     }
 }
+

@@ -37,7 +37,7 @@ public class MainView extends Activity {
     }
 
     //Metodo que actualiza el TextView con el numero acumulado
-    public static void onDisplay(Integer numero){
+    public void onDisplay(Integer numero){
 
         display.setText(numero.toString());
 
@@ -59,7 +59,7 @@ public class MainView extends Activity {
         boton1.setOnClickListener(new MyButtonListener1());
 
         //Creamos un objeto presentador
-        presenter = new PresenterImpl();
+        presenter = new PresenterImpl(this);
 
 
 

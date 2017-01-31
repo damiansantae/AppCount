@@ -13,15 +13,18 @@ public class Model {
 
     }
 
-    public Integer Suma(){
+    public void Suma(){
         contador++;
-        return contador;
+
 
     }
-    public Integer Resta(){
+    public void Resta(){
         contador--;
-        return contador;
 
+
+    }
+    public Integer getContador(){
+        return contador;
     }
 
 }
