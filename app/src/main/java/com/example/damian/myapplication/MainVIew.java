@@ -13,6 +13,8 @@ public class MainView extends Activity {
     private Button boton2;
     private PresenterImpl presenter;
 
+    private Mediator mediator;
+
 
     //Listener para el boton de suma
     class MyButtonListener1 implements View.OnClickListener {
@@ -59,7 +61,12 @@ public class MainView extends Activity {
         boton1.setOnClickListener(new MyButtonListener1());
 
         //Creamos un objeto presentador
-        presenter = new PresenterImpl(this);
+       // presenter = new PresenterImpl(this);
+
+
+        //posible codigo para comunicacion con mediador
+       mediator = (Mediator) getApplication();
+        presenter = (PresenterImpl) mediator.getPresenter();
 
 
 
