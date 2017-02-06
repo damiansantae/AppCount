@@ -22,6 +22,8 @@ public class Mediator extends Application {
 
 
     }
+
+
     public Presenter getPresenter() {
         return myPresenter;
     }

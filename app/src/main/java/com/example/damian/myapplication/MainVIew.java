@@ -22,8 +22,6 @@ public class MainView extends Activity {
         public void onClick(View view) {
             presenter.Sumar();
         }
-
-
     }
 
     //Listener para el boton de resta
@@ -32,9 +30,7 @@ public class MainView extends Activity {
         @Override
         public void onClick(View view) {
             presenter.Restar();
-
         }
-
     }
 
     //Metodo que actualiza el TextView con el numero acumulado
@@ -50,7 +46,7 @@ public class MainView extends Activity {
         setContentView(R.layout.activity_main);
 
 
-//Asignamos los objetos a los diferentes elementos en pantalla
+        //Asignamos los objetos a los diferentes elementos en pantalla
         boton1 = (Button) findViewById(R.id.button1);
         boton2 = (Button) findViewById(R.id.button2);
         display = (TextView) findViewById(R.id.display);
@@ -59,15 +55,11 @@ public class MainView extends Activity {
         boton2.setOnClickListener(new MyButtonListener2());
         boton1.setOnClickListener(new MyButtonListener1());
 
-        //Creamos un objeto presentador
-       // presenter = new PresenterImpl(this);
 
-
-        //posible codigo para comunicacion con mediador
+        //Creamos objeto mediador
        mediator = (Mediator) getApplication();
+        //mediante el mediador obtenemos nuestro presentador
         presenter = (PresenterImpl) mediator.getPresenter();
-
-
 
     }
 

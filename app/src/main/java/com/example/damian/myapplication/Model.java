@@ -13,16 +13,19 @@ public class Model {
 
     }
 
+    //Incrementa el valor y almacena resultado
     public void Suma(){
         contador++;
 
 
     }
+
+    //Decrementa el valor y almacena resultado
     public void Resta(){
         contador--;
-
-
     }
+
+    //Método que devuelve el número acumulado
     public Integer getContador(){
         return contador;
     }
