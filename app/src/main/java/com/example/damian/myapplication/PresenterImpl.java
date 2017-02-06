@@ -7,14 +7,15 @@ package com.example.damian.myapplication;
 public class PresenterImpl implements Presenter {
     private Model model;
     private MainView view;
-    private Mediator mediator;
+    private Mediator myMediator;
 
 
-    public PresenterImpl(MainView mainView) {
+    public PresenterImpl(Mediator mediador) {
         //model = new Model();
         //view = mainView
-        model = mediator.getMyModel();
-        view = mediator.getView();
+        myMediator = mediador;
+        model = myMediator.getMyModel();
+        view = myMediator.getView();
 
 
 

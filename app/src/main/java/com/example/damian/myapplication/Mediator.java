@@ -10,8 +10,6 @@ public class Mediator extends Application {
 
     private PresenterImpl myPresenter;
     private MainView myView;
-
-
     private Model myModel;
 
     @Override
@@ -20,7 +18,7 @@ public class Mediator extends Application {
         super.onCreate();
         myView= new MainView();
         myModel = new Model();
-        myPresenter = new PresenterImpl(myView);
+        myPresenter = new PresenterImpl(this);
 
 
     }

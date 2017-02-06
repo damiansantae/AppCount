@@ -12,7 +12,6 @@ public class MainView extends Activity {
     private Button boton1;
     private Button boton2;
     private PresenterImpl presenter;
-
     private Mediator mediator;
 
 
