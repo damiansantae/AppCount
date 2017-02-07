@@ -16,15 +16,15 @@ public class Mediator extends Application {
     public void onCreate() {
 
         super.onCreate();
-        myView= new MainView();
-        myModel = new Model();
-        myPresenter = new PresenterImpl(this);
-
 
     }
 
 
     public Presenter getPresenter() {
+
+        if (myPresenter==null){
+           myPresenter= new PresenterImpl(this);
+        }
         return myPresenter;
     }
 
@@ -32,7 +32,15 @@ public class Mediator extends Application {
         return myView;
     }
     public Model getMyModel() {
+        if (myModel==null){
+            myModel= new Model();
+        }
         return myModel;
+
+    }
+
+    public void setMyView(MainView view){
+        this.myView=view;
     }
 
 }

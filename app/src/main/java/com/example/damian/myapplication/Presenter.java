@@ -7,8 +7,8 @@ package com.example.damian.myapplication;
 public interface Presenter {
 
     //Métodos puente Presentador-Modelo;
-    public void Sumar();
-    public void Restar();
+    void Sumar();
+    void Restar();
 
 
 }

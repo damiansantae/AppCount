@@ -11,7 +11,7 @@ public class MainView extends Activity {
     private static TextView display;
     private Button boton1;
     private Button boton2;
-    private PresenterImpl presenter;
+
     private Mediator mediator;
 
 
@@ -20,7 +20,7 @@ public class MainView extends Activity {
 
         @Override
         public void onClick(View view) {
-            presenter.Sumar();
+            getPresenter().Sumar();
         }
     }
 
@@ -29,7 +29,7 @@ public class MainView extends Activity {
 
         @Override
         public void onClick(View view) {
-            presenter.Restar();
+            getPresenter().Restar();
         }
     }
 
@@ -58,9 +58,16 @@ public class MainView extends Activity {
 
         //Creamos objeto mediador
        mediator = (Mediator) getApplication();
-        //mediante el mediador obtenemos nuestro presentador
-        presenter = (PresenterImpl) mediator.getPresenter();
 
+        //Registramos la vista
+        mediator.setMyView(this);
+
+        //mediante el mediador obtenemos nuestro presentador
+
+
+    }
+    private PresenterImpl getPresenter(){
+        return (PresenterImpl) mediator.getPresenter();
     }
 
 }

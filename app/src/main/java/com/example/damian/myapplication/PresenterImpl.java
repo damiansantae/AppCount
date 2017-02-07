@@ -5,8 +5,7 @@ package com.example.damian.myapplication;
  */
 
 public class PresenterImpl implements Presenter {
-    private Model model;
-    private MainView view;
+
     private Mediator myMediator;
 
 
@@ -14,23 +13,28 @@ public class PresenterImpl implements Presenter {
 
         //Creamos mediador pasado por parámetro
         myMediator = mediador;
-        //Definimos modelo y vista a partir del mediador
-        model = myMediator.getMyModel();
-        view = myMediator.getView();
+        
+
     }
 
 
     //Llamada al modelo para realizar la operacion suma
     public void Sumar() {
-        model.Suma();
-        view.onDisplay(model.getContador());
+        getModel().Suma();
+        getView().onDisplay(getModel().getContador());
     }
 
     //Llamada al modelo para realizar la operacion resta
     public void Restar() {
-        model.Resta();
-        view.onDisplay(model.getContador());
+        getModel().Resta();
+        getView().onDisplay(getModel().getContador());
 
+    }
+    private MainView getView() {
+        return myMediator.getView();
+    }
+    private Model getModel(){
+        return  myMediator.getMyModel();
     }
 }
 
